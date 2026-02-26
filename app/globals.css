@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+.perspective {
+  perspective: 1000px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
