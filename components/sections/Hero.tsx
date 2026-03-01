@@ -7,9 +7,8 @@ import SectionContainer from "../layout/SectionContainer";
 
 export default function Hero() {
   return (
-    <SectionContainer
-      className="min-h-screen flex items-center relative overflow-hidden"
-    >
+    <SectionContainer className="min-h-screen flex items-center relative overflow-hidden">
+      
       {/* 🌈 Animated Background Glow */}
       <div className="absolute inset-0 -z-20">
         <motion.div
@@ -28,15 +27,11 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 opacity-[0.03] bg-[url('/noise.png')]" />
 
       <div className="grid md:grid-cols-2 gap-16 items-center w-full">
-        
+
         {/* 🧠 TEXT */}
         <div>
           <motion.h1
-            className="
-              text-5xl md:text-6xl font-bold tracking-tight mb-4
-              bg-gradient-to-r from-white via-indigo-200 to-indigo-500
-              bg-clip-text text-transparent
-            "
+            className="text-5xl md:text-6xl font-bold tracking-tight mb-4 bg-gradient-to-r from-white via-indigo-200 to-indigo-500 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -51,7 +46,8 @@ export default function Hero() {
             transition={{ delay: 0.2 }}
           >
             Software Developer & Application Support Engineer <br />
-            Designing reliable systems, strengthening application stability, and delivering resilient production solutions.
+            Designing reliable systems, strengthening application stability,
+            and delivering resilient production solutions.
           </motion.p>
 
           <motion.p
@@ -61,10 +57,14 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
           >
             4+ years of experience in banking and manufacturing industries.
-            Specialized in <span className="text-slate-200">Java, Node Js, Python development</span>, 
-            automation testing, troubleshooting, and system integration.
+            Specialized in{" "}
+            <span className="text-slate-200">
+              Java, Node Js, Python development
+            </span>
+            , automation testing, troubleshooting, and system integration.
           </motion.p>
 
+          {/* 🔘 Buttons */}
           <motion.div
             className="flex gap-4"
             initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,11 @@ export default function Hero() {
             transition={{ delay: 0.6 }}
           >
             <Button href="#contact">Contact Me</Button>
-            <Button href="/cv.pdf">Download CV</Button>
+
+            {/* Download CV */}
+            <a href="/cv.pdf" download="CV - RAMA AUFADHA RISQULLAH_NEW.pdf">
+              <Button>Download CV</Button>
+            </a>
           </motion.div>
         </div>
 
@@ -89,20 +93,12 @@ export default function Hero() {
             whileHover={{ scale: 1.05, rotateX: 6, rotateY: -6 }}
             className="relative group perspective"
           >
+            
             {/* 🌈 Gradient Aura */}
-            <div className="
-              absolute inset-0 rounded-3xl
-              bg-gradient-to-tr from-indigo-500 via-blue-500 to-purple-500
-              blur-2xl opacity-30 group-hover:opacity-60
-              transition
-            " />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-indigo-500 via-blue-500 to-purple-500 blur-2xl opacity-30 group-hover:opacity-60 transition" />
 
             {/* 💎 Glass Frame */}
-            <div className="
-              relative bg-slate-900/40 backdrop-blur-xl
-              border border-slate-800
-              rounded-3xl p-2
-            ">
+            <div className="relative bg-slate-900/40 backdrop-blur-xl border border-slate-800 rounded-3xl p-2">
               <Image
                 src="/profilev3.jpg"
                 alt="Profile"
