@@ -71,11 +71,11 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <Button href="#contact">Contact Me</Button>
+            <Button href="#projects" className="bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 hover:transform hover:scale-105">View Projects</Button>
 
             {/* Download CV */}
-            <a href="/cv.pdf" download="CV - RAMA AUFADHA RISQULLAH_NEW.pdf">
-              <Button>Download CV</Button>
+            <a href="/cv-rama.pdf" download>
+              <Button className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 hover:transform hover:scale-105">Download CV</Button>
             </a>
           </motion.div>
         </div>

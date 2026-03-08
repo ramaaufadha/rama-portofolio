@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
-import Card from "../ui/Card";
+import Badge from "../ui/Badge";
 import SectionContainer from "../layout/SectionContainer";
 
 export default function Projects() {
@@ -25,24 +25,33 @@ export default function Projects() {
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15 }}
               viewport={{ once: true }}
+              className="group relative"
             >
-              <Card>
-                <h3 className="text-indigo-400 mb-3 text-lg">
-                  {project.title}
-                </h3>
+              <motion.div
+                className="bg-slate-900/50 backdrop-blur-xl border border-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 p-6"
+                whileHover={{ y: -8, scale: 1.02 }}
+              >
+                {/* Content */}
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed mb-4">{project.desc}</p>
 
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  {project.desc}
-                </p>
-              </Card>
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <Badge key={tech} label={tech} />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
